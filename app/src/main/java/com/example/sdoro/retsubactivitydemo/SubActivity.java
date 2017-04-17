@@ -30,4 +30,14 @@ public class SubActivity extends AppCompatActivity {
         setContentView(button);
     }
 
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent();
+        intent.putExtra("messaggio", "pigiato BACK!");
+        intent.putExtra("cliccato", false);
+        intent.putExtra("timestamp", System.currentTimeMillis());
+        setResult(10, intent);
+        finish();
+    }
+
 }
